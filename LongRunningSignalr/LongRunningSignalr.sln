@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongRunningSignalr", "LongRunningSignalr.csproj", "{9B5C33DF-03AD-41AD-9984-1351AD54E227}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B5C33DF-03AD-41AD-9984-1351AD54E227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B5C33DF-03AD-41AD-9984-1351AD54E227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B5C33DF-03AD-41AD-9984-1351AD54E227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B5C33DF-03AD-41AD-9984-1351AD54E227}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

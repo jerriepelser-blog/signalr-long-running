@@ -10,7 +10,7 @@
     <script src="~/lib/signalr/signalr.js"></script>
     <script>
         var connection = new signalR.HubConnectionBuilder()
-            .withUrl("/jobprogress?jobId=abc")
+            .withUrl("/jobprogress")
             .configureLogging(signalR.LogLevel.Information)
             .build();
         connection.on("progress",

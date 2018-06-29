@@ -9,6 +9,8 @@
 {
     <script src="~/lib/signalr/signalr.js"></script>
     <script>
+        document.head || (document.head = document.getElementsByTagName('head')[0]);
+
         var connection = new signalR.HubConnectionBuilder()
             .withUrl("/jobprogress")
             .configureLogging(signalR.LogLevel.Information)
@@ -16,13 +18,29 @@
         connection.on("progress",
             (percent) => {
                 if (percent === 100) {
+                    changeFavicon("/done.png");
                     document.getElementById("job-status").innerText = "Finished!";
                 } else {
+                    changeFavicon("/running.png");
                     document.getElementById("job-status").innerText = `${percent}%`;
                 }
             });
         connection.start()
             .then(_ => connection.invoke("AssociateJob", "@ViewBag.JobId"))
             .catch(err => console.error(err.toString()));
+
+        changeFavicon("/waiting.png");
+
+        function changeFavicon(src) {
+            var link = document.createElement('link'),
+                oldLink = document.getElementById('dynamic-favicon');
+            link.id = 'dynamic-favicon';
+            link.rel = 'shortcut icon';
+            link.href = src;
+            if (oldLink) {
+                document.head.removeChild(oldLink);
+            }
+            document.head.appendChild(link);
+        }
     </script>
 }
